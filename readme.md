@@ -2,9 +2,11 @@
 
 ## Prérequis 
 
-docker-compose
-python3-pip 
-pip3 install mechanize
+* docker-compose ( https://docs.docker.com/compose/install/ )
+* python3-pip 
+* mechanize (pip3 install mechanize)
+
+
 python2 et pip2 fonctionnent mais il faut changer dans manage_compte.sh
 
 ## Init du container et de texlive 
