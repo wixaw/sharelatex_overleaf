@@ -89,7 +89,7 @@ if [ "$type" = "creer" ]; then
     create_cookie
 
     # Creation du token de sécu
-    CSRF=$(curl 'https://sharelatex.domain.fr/admin/register' -s --compressed  -H "$cookie"| perl -lne 'print $1 if /csrfToken = \"(.+?)\"/')
+    CSRF=$(curl 'https://sharelatex.domain.fr/admin/register' -s --compressed  -H "$cookie"| xmllint --html --xpath 'string(/html/head/meta[@name="ol-csrfToken"]/@content)' - 2>/dev/null)
 
     # # Creation de l'utilisateur
     result=$(curl "https://sharelatex.domain.fr/admin/register" \
